@@ -43,36 +43,7 @@ Row counts exclude the header rows. The `README` sheet inside the workbook holds
 
 ![Junkshop Buy and Sell Record System ERD](erd.png)
 
-If the picture does not show, this is the same diagram as text (PK = primary key, FK = foreign key, 1 and M = one side and many side):
-
-```
- Sellers                       Purchased Transactions
-+----------------+            +------------------------+
-| PK SellerID    |1         M | PK TransactionID       |
-|    Name        |----------->| FK SellerID            |
-|    ContactNo.  |            |    TransactionDate     |
-+----------------+            +------------------------+
-                                          | 1
-                                          v M
- MaterialTypes                 Purchased Items
-+----------------+            +------------------------+
-| PK MaterialID  |1         M | PK TransactionID       |
-|    MaterialName|<-----------| PK MaterialID          |
-|    BuyPrice... |            | FK TransactionID       |
-|    SellPrice...|            | FK MaterialID          |
-+----------------+            +------------------------+
-        | 1
-        v M
- SalesTransaction
-+------------------------+
-| FK SaleID              |
-| FK MaterialID          |
-|    WeightKilos         |
-|    Quantity            |
-|    SalesDate           |
-|    BuyerName           |
-+------------------------+
-```
+<img src="VENTOZILLADA_AiraShane_Final_ERD.drawio (1).png">
 
 The diagram shows these one-to-many (1:M) relationships:
 
